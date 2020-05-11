@@ -1,0 +1,7 @@
+<h2>Listado de empleado</h2>
+<ul class="ejercicios" *ngFor="let empleado of listEmpleados">
+  <li (click)="onSelectEmpleado(empleado)" [class.selected]="empleado === empleadoSeleccionado">
+    <span class="badge">{{empleado.id}}</span> {{ empleado.firtsName}} {{empleado.lastName}}
+  </li>
+</ul>
+<app-empleado-detalle [empleadoItem]="empleadoSeleccionado"></app-empleado-detalle>

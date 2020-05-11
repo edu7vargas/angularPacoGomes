@@ -1,0 +1,46 @@
+<div *ngIf="empleadoItem">
+  <table>
+    <thead>
+      <tr>
+        <td> PRODIEDAD</td>
+        <td> VALOR</td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>Id</td>
+          <td>{{ empleadoItem.id }}</td>
+        </tr>
+        <tr>
+          <td>Nombres</td>
+          <td>{{ empleadoItem.firtsName | uppercase }}</td>
+        </tr>
+        <tr>
+          <td>Apellidos:</td>
+          <td>{{ empleadoItem.lastName | uppercase }}</td>
+        </tr>
+        <tr>
+          <td>Ocupacion:</td>
+          <td>{{ empleadoItem.designation }}</td>
+        </tr>
+        <tr>
+          <td>Contacto:</td>
+          <td>{{ empleadoItem.contact }}</td>
+        </tr>
+        <tr>
+          <td>Direccion:</td>
+          <td>{{ empleadoItem.address }}</td>
+        </tr>
+        <tr>
+          <td>Sexo:</td>
+          <td>{{ empleadoItem.sex }}</td>
+        </tr>
+        <tr>
+          <td>Activo:</td>
+          <td>{{ empleadoItem.active }}</td>
+        </tr>
+
+    </tbody>
+
+  </table>
+</div>
