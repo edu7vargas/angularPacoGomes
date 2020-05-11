@@ -20,7 +20,9 @@ export class EmpleadosComponent implements OnInit {
   }
 
   fn_listEmpleados(){
-    this.listEmpleados = this.empleadoService.getEmpleados();
+    this.empleadoService.getEmpleados().subscribe(
+      listEmpleados => this.listEmpleados = listEmpleados
+    );
   }
   onSelectEmpleado(obj: Empleado):void{
 

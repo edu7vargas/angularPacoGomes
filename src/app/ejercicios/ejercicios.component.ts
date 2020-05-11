@@ -22,7 +22,11 @@ ejercicioSeleccionado: Ejercicio;
   constructor(private ejercicioService: EjercicioService) { }
 
   fn_listEjercicios(): void{
-    this.listEjercicios = this.ejercicioService.getEjercicios();
+
+    this.ejercicioService.getEjercicios().subscribe(
+      listEjercicios => this.listEjercicios = listEjercicios
+    );
+
   }
 
   ngOnInit(): void {
