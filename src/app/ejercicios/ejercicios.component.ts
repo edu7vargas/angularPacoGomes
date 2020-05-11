@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Ejercicio } from '../interface/ejercicio';
-import { EJERCICIOS } from '../data/collection-ejercicios';
+import { EjercicioService } from '../service/ejercicio.service';
 
 @Component({
   selector: 'app-ejercicios',
@@ -15,14 +15,18 @@ objEjercicio: Ejercicio = {
     name: "Flexiones"
  };
 
-listEjercicios = EJERCICIOS;
+listEjercicios: Ejercicio[];
 ejercicioSeleccionado: Ejercicio;
 
 
-  constructor() { }
+  constructor(private ejercicioService: EjercicioService) { }
+
+  fn_listEjercicios(): void{
+    this.listEjercicios = this.ejercicioService.getEjercicios();
+  }
 
   ngOnInit(): void {
-
+    this.fn_listEjercicios();
   }
 
   onSelectEjercicio(obj: Ejercicio):void{

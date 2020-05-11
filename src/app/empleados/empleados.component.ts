@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EMPLEADOS } from '../data/collection-empleados';
+import { EmpleadoService } from '../service/empleado.service';
 import { Empleado } from '../interface/empleado';
 
 
@@ -10,19 +10,22 @@ import { Empleado } from '../interface/empleado';
 })
 export class EmpleadosComponent implements OnInit {
 
-  constructor() { }
-  listEmpleados = EMPLEADOS;
+  constructor(private empleadoService: EmpleadoService) { }
+  listEmpleados: Empleado[];
   empleadoSeleccionado: Empleado;
 
 
   ngOnInit(): void {
+    this.fn_listEmpleados();
   }
 
+  fn_listEmpleados(){
+    this.listEmpleados = this.empleadoService.getEmpleados();
+  }
   onSelectEmpleado(obj: Empleado):void{
 
     console.log("Empleado::: ",obj);
     this.empleadoSeleccionado = obj;
-
   }
 
 }
