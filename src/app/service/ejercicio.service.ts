@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
 import { Ejercicio } from '../interface/ejercicio';
 import { EJERCICIOS } from '../data/collection-ejercicios';
 
@@ -9,7 +11,8 @@ export class EjercicioService {
 
   constructor() { }
 
-  getEjercicios(): Ejercicio[]{
-    return EJERCICIOS;
+  getEjercicios(): Observable<Ejercicio[]>{
+    return of(EJERCICIOS);
   }
+
 }
