@@ -24,7 +24,9 @@ ejercicioSeleccionado: Ejercicio;
   fn_listEjercicios(): void{
 
     this.ejercicioService.getEjercicios().subscribe(
-      listEjercicios => this.listEjercicios = listEjercicios
+      (result: any) => {
+        this.listEjercicios = result;
+      }
     );
 
   }

@@ -21,10 +21,12 @@ export class EmpleadosComponent implements OnInit {
 
   fn_listEmpleados(){
     this.empleadoService.getEmpleados().subscribe(
-      listEmpleados => this.listEmpleados = listEmpleados
+      (result: any) => {
+        this.listEmpleados = result;
+      }
     );
   }
-  onSelectEmpleado(obj: Empleado):void{
+  onSelectEmpleado(obj: Empleado): void{
 
     console.log("Empleado::: ",obj);
     this.empleadoSeleccionado = obj;
