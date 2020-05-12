@@ -9,6 +9,7 @@ import { EjerciciosComponent } from './ejercicios/ejercicios.component';
 import { EjercicioDetalleComponent } from './ejercicio-detalle/ejercicio-detalle.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { EmpleadoDetalleComponent } from './empleado-detalle/empleado-detalle.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EmpleadoDetalleComponent } from './empleado-detalle/empleado-detalle.co
     EjerciciosComponent,
     EjercicioDetalleComponent,
     EmpleadosComponent,
-    EmpleadoDetalleComponent
+    EmpleadoDetalleComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
