@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
 import { Ejercicio } from '../interface/ejercicio';
 import { EjercicioService } from '../service/ejercicio.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ejercicio-detalle',
@@ -12,7 +14,10 @@ export class EjercicioDetalleComponent implements OnInit {
 
   ejercicioItem: Ejercicio;
 
-  constructor(private route: ActivatedRoute, private ejercicioService: EjercicioService) { }
+  constructor(private route: ActivatedRoute,
+    private ejercicioService: EjercicioService,
+    private location: Location
+    ) { }
 
   ngOnInit(): void {
     this.getOneEjercicio();
@@ -26,6 +31,15 @@ export class EjercicioDetalleComponent implements OnInit {
         this.ejercicioItem = result;
       }
     );
+    //debugger;
   }
+
+
+  goBack():void{
+    this.location.back();
+
+  }
+
+
 
 }
