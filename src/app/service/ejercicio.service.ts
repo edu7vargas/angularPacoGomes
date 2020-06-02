@@ -18,5 +18,5 @@ export class EjercicioService {
   getOneEjercicio(id: number): Observable<Ejercicio>{
     return of(EJERCICIOS.find(ejercicio => ejercicio.id === id));
   }
-
+ // prueba 01
 }
